@@ -1,7 +1,7 @@
 #!/bin/bash
 IMAGEPATH=/home/$USER/<path-t>/icon.png
 SLEEPTIME=5000
-tim="$(echo -3 "" | rofi -dmenu -width 30 -p " :")"
+tim="$(echo -3 "" | rofi -dmenu -width 30 -p -padding 20 " :")"
 #shutdown +$tim 2> /dev/null
 echo $tim
 if [ "$tim" ]; then
