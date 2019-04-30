@@ -1,0 +1,12 @@
+#!/bin/bash
+IMAGEPATH=/home/$USER/<path-t>/icon.png
+SLEEPTIME=5000
+tim="$(echo -3 "" | rofi -dmenu -width 30 -p " :")"
+#shutdown +$tim 2> /dev/null
+echo $tim
+if [ "$tim" ]; then
+    notify-send "shutdown" "in $tim minutes" -t $SLEEPTIME -i $IMAGEPATH
+    shutdown +$tim 2> /dev/null
+else
+    notify-send "failed" "choose a number"
+fi
